@@ -590,7 +590,62 @@ class AntigravityUiEngine {
             widgetWrapper.appendChild(navBar);
             widgetWrapper.appendChild(contentArea);
             container.appendChild(widgetWrapper);
+
+            // Also mirror rendered A2UI deliverables into the Pop-Up Boardroom Modal
+            const modalContent = document.getElementById("a2ui-modal-content");
+            const modalTitle = document.getElementById("a2ui-modal-title");
+            if (modalContent) {
+                modalContent.innerHTML = container.innerHTML;
+                // Re-bind tab listeners inside the cloned modal
+                const modalTabs = modalContent.querySelectorAll(".tab-btn");
+                const modalPanes = modalContent.querySelectorAll(".tab-pane");
+                modalTabs.forEach((btn, tIdx) => {
+                    btn.onclick = () => {
+                        modalTabs.forEach(b => b.classList.remove('active'));
+                        btn.classList.add('active');
+                        modalPanes.forEach((p, pIdx) => {
+                            if (pIdx === tIdx) {
+                                p.classList.remove('hidden');
+                                p.classList.add('active');
+                            } else {
+                                p.classList.remove('active');
+                                p.classList.add('hidden');
+                            }
+                        });
+                    };
+                });
+            }
+            if (modalTitle && payload.scenario_title) {
+                modalTitle.innerText = `${payload.scenario_title} — A2UI Executive Boardroom Canvas`;
+            }
         }
+    }
+}
+
+// Function to handle A2UI Pop-Up Executive Canvas Modal
+function setupA2UiModal() {
+    const modal = document.getElementById("a2ui-popup-modal");
+    const openBtn = document.getElementById("btn-popup-a2ui");
+    const closeBtn = document.getElementById("close-a2ui-modal-btn");
+
+    if (openBtn && modal) {
+        openBtn.addEventListener("click", () => {
+            modal.style.display = "flex";
+        });
+    }
+
+    if (closeBtn && modal) {
+        closeBtn.addEventListener("click", () => {
+            modal.style.display = "none";
+        });
+    }
+
+    if (modal) {
+        modal.addEventListener("click", (e) => {
+            if (e.target === modal) {
+                modal.style.display = "none";
+            }
+        });
     }
 }
 
@@ -821,6 +876,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     setupStepDrilldown();
     setupGovernanceModal();
+    setupA2UiModal();
 
     // A2UI Viewport Expand / Fullscreen Toggle for CXO Reviews
     const expandBtn = document.getElementById("btn-toggle-expand");

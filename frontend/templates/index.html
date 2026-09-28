@@ -302,11 +302,14 @@
             <div class="panel-header">
                 <div class="panel-header-title">
                     <h2>🖥️ Dynamic A2UI Viewport</h2>
-                    <span class="status-indicator live" id="a2ui-status-text">Business Deliverables</span>
+                    <span class="status-indicator live" id="a2ui-status-text">A2UI 2.0 Deliverables</span>
                 </div>
                 <div class="panel-header-controls">
+                    <button class="btn-popup-a2ui" id="btn-popup-a2ui" title="Pop Up Fullscreen A2UI Executive Boardroom Canvas">
+                        <span>🔍</span> Pop-Up Canvas
+                    </button>
                     <button class="btn-expand-a2ui" id="btn-toggle-expand" title="Maximize A2UI Viewport for CXO Executive Review">
-                        <span id="expand-icon">⛶</span> <span id="expand-label">Expand View</span>
+                        <span id="expand-icon">⛶</span> <span id="expand-label">Expand Panel</span>
                     </button>
                 </div>
             </div>
@@ -315,11 +318,34 @@
                 <div class="a2ui-empty" id="a2ui-empty-state">
                     <div class="empty-icon">📊</div>
                     <h3>Awaiting Workflow Execution</h3>
-                    <p>Click <strong>Execute Workflow</strong> to dynamically render live KPI metrics, Portfolio Optimization Manifests, and Fiduciary Attestation Certificates.</p>
+                    <p>Click <strong>Execute Workflow</strong> to dynamically render live KPI metrics, Portfolio Optimization Manifests, and Fiduciary Attestation Certificates via A2UI 2.0.</p>
                 </div>
             </div>
         </section>
     </main>
+
+    <!-- A2UI Pop-Up Executive Canvas Modal -->
+    <div class="a2ui-modal-overlay" id="a2ui-popup-modal" style="display: none;">
+        <div class="a2ui-modal-card">
+            <div class="a2ui-modal-header">
+                <div class="a2ui-modal-title-wrap">
+                    <span class="a2ui-pill">A2UI 2.0 EXECUTIVE BOARDROOM CANVAS</span>
+                    <h2 id="a2ui-modal-title">Business Deliverables & Value Creation Dashboard</h2>
+                </div>
+                <div class="a2ui-modal-actions">
+                    <span class="badge badge-platform">Gemini Enterprise A2UI</span>
+                    <span class="badge badge-mode">Governance: BOUNDED_EMERGENCE</span>
+                    <button class="modal-close-btn" id="close-a2ui-modal-btn">✕</button>
+                </div>
+            </div>
+            <div class="a2ui-modal-body" id="a2ui-modal-content">
+                <div class="a2ui-empty">
+                    <div class="empty-icon">📊</div>
+                    <h3>Execute a scenario to populate the A2UI Executive Canvas.</h3>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Deep Governance Explorer Modal -->
     <div class="explorer-modal-overlay" id="explorer-modal" style="display: none;">
