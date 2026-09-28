@@ -1,5 +1,5 @@
 """
-SYSTEM PATTERN: ANTIGRAVITY GOVERNANCE ENGINE & BOUNDED EMERGENCE ORCHESTRATOR
+SYSTEM PATTERN: PALADIN GOVERNANCE ENGINE & BOUNDED EMERGENCE ORCHESTRATOR
 Multi-agent workflow execution engine on Gemini Enterprise Agent Platform with
 real-time SSE streaming, Gateway policy intercepts, and schema-driven A2UI deliverables.
 """
@@ -20,6 +20,7 @@ if base_dir not in sys.path:
 from flask import Flask, Response, request, jsonify, render_template
 from flask_cors import CORS
 from backend.agents import (
+    PaladinSupervisorAgent,
     AntigravitySupervisorAgent,
     AdkExecutionContext,
     QuantitativePortfolioAnalyticsAgent,
@@ -203,9 +204,9 @@ SCENARIOS = {
 
 
 # ==============================================================================
-# ANTIGRAVITY GOVERNANCE ENGINE (BOUNDED EMERGENCE ORCHESTRATOR)
+# PALADIN GOVERNANCE ENGINE (BOUNDED EMERGENCE ORCHESTRATOR)
 # ==============================================================================
-class AntigravityGovernanceEngine:
+class PaladinGovernanceEngine:
     def __init__(self, session_id: str, declarative_intent: str, tenant_id: str = "TNT-CORP-01", scenario_id: str = "scenario-tax-alpha"):
         self.session_id = session_id
         self.intent = declarative_intent
@@ -213,7 +214,7 @@ class AntigravityGovernanceEngine:
         self.scenario = SCENARIOS.get(scenario_id, SCENARIOS["scenario-tax-alpha"])
         self.procedural_anchors = self.scenario["anchors"]
         # ADK 2.6 Runtime Integration
-        self.adk_supervisor = AntigravitySupervisorAgent()
+        self.adk_supervisor = PaladinSupervisorAgent()
         self.adk_context = AdkExecutionContext(session_id=self.session_id, tenant_id=self.tenant_id)
 
     def execute_bounded_workflow(self) -> Generator[str, None, None]:
@@ -231,7 +232,7 @@ class AntigravityGovernanceEngine:
 
         sup_turn = self.adk_supervisor.execute_turn(self.adk_context, self.intent)
         yield self._emit_frame("onAgentThought", {
-            "author": "Antigravity-v3.0",
+            "author": "Paladin-v3.0",
             "message": f"⚓ Intent Anchored: '{self.intent}'. Bound to OKF 2.0 knowledge nodes: {', '.join(self.procedural_anchors)}."
         })
         time.sleep(0.4)
@@ -256,7 +257,7 @@ class AntigravityGovernanceEngine:
         # STATE 3: DOMAIN WORKER 1 - QUANTITATIVE PORTFOLIO ANALYTICS
         quant_agent = self.adk_supervisor.workers["domain_analytics_agent"]
         yield self._emit_frame("onAgentDelegation", {
-            "author": "Antigravity-v3.0",
+            "author": "Paladin-v3.0",
             "target": "domain_analytics_agent",
             "message": "Decomposing asset allocation drift, custodial tax lots, and factor optimization opportunities."
         })
@@ -285,7 +286,7 @@ class AntigravityGovernanceEngine:
         # STATE 4: DOMAIN WORKER 2 - CRM & INTERACTION SYNTHESIS
         crm_agent = self.adk_supervisor.workers["crm_records_agent"]
         yield self._emit_frame("onAgentDelegation", {
-            "author": "Antigravity-v3.0",
+            "author": "Paladin-v3.0",
             "target": "crm_records_agent",
             "message": "Extracting household relationship history, life-event transitions, and risk tolerance scores."
         })
@@ -313,7 +314,7 @@ class AntigravityGovernanceEngine:
         # STATE 5: DOMAIN WORKER 3 - COMPLIANCE SENTINEL
         comp_agent = self.adk_supervisor.workers["compliance_sentinel_agent"]
         yield self._emit_frame("onAgentDelegation", {
-            "author": "Antigravity-v3.0",
+            "author": "Paladin-v3.0",
             "target": "compliance_sentinel_agent",
             "message": "Validating fiduciary suitability, Reg BI best-interest alignment, and regulatory disclosures."
         })
@@ -334,7 +335,7 @@ class AntigravityGovernanceEngine:
         # STATE 6: DOMAIN WORKER 4 - OPERATIONS & MONTE CARLO SIMULATION
         ops_agent = self.adk_supervisor.workers["operations_simulation_agent"]
         yield self._emit_frame("onAgentDelegation", {
-            "author": "Antigravity-v3.0",
+            "author": "Paladin-v3.0",
             "target": "operations_simulation_agent",
             "message": "Running 10,000-path Monte Carlo retirement simulation on proposed rebalanced portfolio."
         })
@@ -395,7 +396,7 @@ class AntigravityGovernanceEngine:
         # STATE 9: EXPANDED BUSINESS VALUE DELIVERABLES (A2UI PRESENTATION)
         # ----------------------------------------------------------------------
         yield self._emit_frame("onUiComponentDelivery", {
-            "author": "Antigravity-v3.0",
+            "author": "Paladin-v3.0",
             "ui_specification": "2.0",
             "payload": {
                 "scenario_title": self.scenario["title"],
@@ -509,7 +510,7 @@ class AntigravityGovernanceEngine:
                         },
                         "advisor_script": {
                             "title": "🗣️ Ready-to-Use Advisor Client Talking Points",
-                            "script": f"\"Hello Miller Household. During our quarterly review, our Antigravity intelligence engine identified an opportunity to harvest tax losses from market volatility while rebalancing your asset allocation. This generates an estimated {self.scenario['tax_alpha']} in direct tax alpha and boosts your retirement goal certainty to {self.scenario['goal_uplift'].split(' ')[-1]}. We have also scheduled your annual 529 contribution window for next month.\""
+                            "script": f"\"Hello Miller Household. During our quarterly review, our Paladin intelligence engine identified an opportunity to harvest tax losses from market volatility while rebalancing your asset allocation. This generates an estimated {self.scenario['tax_alpha']} in direct tax alpha and boosts your retirement goal certainty to {self.scenario['goal_uplift'].split(' ')[-1]}. We have also scheduled your annual 529 contribution window for next month.\""
                         },
                         "phases": [
                             {
@@ -578,7 +579,7 @@ class AntigravityGovernanceEngine:
                         "details": {
                             "standard": "SEC Rule 206(4)-7 & FINRA Notice 20-21 / Reg BI",
                             "status": "CERTIFIED_COMPLIANT",
-                            "signer": "Antigravity Compliance Sentinel (Gemini Enterprise Agent Platform)",
+                            "signer": "Paladin Compliance Sentinel (Gemini Enterprise Agent Platform)",
                             "verdict": f"The recommended portfolio modifications for '{self.scenario['title']}' are in the sole best interest of the participant, reducing volatility by 18% and generating an estimated {self.scenario['tax_alpha']} in after-tax alpha.",
                             "monte_carlo_stats": f"10,000 Paths Simulated | Baseline: {self.scenario['goal_uplift'].split(' ')[0]} ➔ Post-Rebalance: {self.scenario['goal_uplift'].split(' ')[-1]}",
                             "audit_signature": telemetry_sig
@@ -596,6 +597,10 @@ class AntigravityGovernanceEngine:
 
     def _emit_frame(self, method: str, params: Dict[str, Any]) -> str:
         return json.dumps({"jsonrpc": "2.0", "method": method, "params": params})
+
+
+# Backwards compatibility alias
+AntigravityGovernanceEngine = PaladinGovernanceEngine
 
 
 # ==============================================================================
@@ -619,7 +624,7 @@ def reactive_stream_endpoint() -> Response:
         tenant_id = request.args.get("tenant_id", "TNT-CORP-01")
         scenario_id = request.args.get("scenario_id", "scenario-tax-alpha")
 
-    engine = AntigravityGovernanceEngine(session_id=session_id, declarative_intent=prompt, tenant_id=tenant_id, scenario_id=scenario_id)
+    engine = PaladinGovernanceEngine(session_id=session_id, declarative_intent=prompt, tenant_id=tenant_id, scenario_id=scenario_id)
 
     def sse_generator() -> Generator[str, None, None]:
         for frame in engine.execute_bounded_workflow():
@@ -663,7 +668,7 @@ def test_evaluate_policy() -> Response:
 @app.route('/api/session', methods=['GET'])
 def session_context_manager() -> Response:
     return jsonify({
-        "session_id": "session-antigravity-live-01",
+        "session_id": "session-paladin-live-01",
         "tenant_id": "TNT-CORP-01",
         "lifecycle_state": "ACTIVE",
         "governance_mode": "BOUNDED_EMERGENCE",
@@ -682,7 +687,7 @@ def trigger_agent_engine_deployment() -> Response:
             manifest = json.load(f)
     return jsonify({
         "status": "SUCCESS",
-        "message": "Antigravity ADK 2.6 Multi-Agent system successfully deployed to Vertex AI Agent Engine",
+        "message": "Paladin ADK 2.6 Multi-Agent system successfully deployed to Vertex AI Agent Engine",
         "deployment": manifest
     })
 

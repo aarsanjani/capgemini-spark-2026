@@ -1,5 +1,5 @@
 """
-TEST SUITE: ANTIGRAVITY GOVERNANCE ENGINE & BOUNDED EMERGENCE PLATFORM
+TEST SUITE: PALADIN GOVERNANCE ENGINE & BOUNDED EMERGENCE PLATFORM
 Verifies Agent Registry, Centralized Policy Engine, SSE Streaming, and Health Endpoints.
 """
 
@@ -31,7 +31,7 @@ def test_session_endpoint(client):
     response = client.get('/api/session')
     assert response.status_code == 200
     data = response.get_json()
-    assert data["session_id"] == "session-antigravity-live-01"
+    assert data["session_id"] == "session-paladin-live-01"
     assert data["lifecycle_state"] == "ACTIVE"
 
 def test_agent_registry_attestation():
@@ -77,11 +77,12 @@ def test_index_page_delivery(client):
     """Verifies that the root page serves the UI shell."""
     response = client.get('/')
     assert response.status_code == 200
-    assert b"ANTIGRAVITY" in response.data
+    assert b"PALADIN" in response.data
 
 def test_adk_supervisor_and_worker_agents():
     """Verifies instantiation and execution of all 4 ADK 2.6 domain workers and supervisor."""
     from backend.agents import (
+        PaladinSupervisorAgent,
         AntigravitySupervisorAgent,
         AdkExecutionContext,
         QuantitativePortfolioAnalyticsAgent,
@@ -91,9 +92,12 @@ def test_adk_supervisor_and_worker_agents():
     )
 
     context = AdkExecutionContext(session_id="test-session-001", tenant_id="TNT-TEST")
-    supervisor = AntigravitySupervisorAgent()
+    supervisor = PaladinSupervisorAgent()
     assert supervisor.role == "BOUNDED_EMERGENCE_SUPERVISOR"
     assert len(supervisor.workers) == 4
+
+    # Alias check
+    assert AntigravitySupervisorAgent == PaladinSupervisorAgent
 
     # 1. Supervisor Intent Anchoring
     sup_res = supervisor.execute_turn(context, "Optimize portfolio asset allocation and ensure compliance")
@@ -163,8 +167,9 @@ def test_reactive_stream_sse(client):
 
 def test_agent_engine_app_class():
     """Verifies Vertex AI Agent Engine runtime wrapper execution."""
-    from backend.agent_engine_app import AntigravityAgentEngineApp
-    ae_app = AntigravityAgentEngineApp(project_id="arsanjani-genai", location="us-central1")
+    from backend.agent_engine_app import PaladinAgentEngineApp, AntigravityAgentEngineApp
+    assert AntigravityAgentEngineApp == PaladinAgentEngineApp
+    ae_app = PaladinAgentEngineApp(project_id="arsanjani-genai", location="us-central1")
     ae_app.set_up()
     assert ae_app.supervisor is not None
 
@@ -183,6 +188,7 @@ def test_agent_engine_deployment_endpoints(client):
     assert deploy_data["status"] == "SUCCESS"
     assert "deployment" in deploy_data
     assert "reasoningEngines" in deploy_data["deployment"]["resource_name"]
+    assert "paladin" in deploy_data["deployment"]["resource_name"]
 
     # Check status
     status_resp = client.get('/api/governance/agent-engine-status')
@@ -190,5 +196,6 @@ def test_agent_engine_deployment_endpoints(client):
     status_data = status_resp.get_json()
     assert status_data["status"] == "DEPLOYED"
     assert status_data["assurance_score"] == 0.992
+
 
 

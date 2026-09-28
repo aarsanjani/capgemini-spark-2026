@@ -1,5 +1,5 @@
 /**
- * SYSTEM PATTERN: ANTIGRAVITY A2UI ENGINE, SSE STREAM PARSER & STEP DRILL-DOWN VISUALIZER
+ * SYSTEM PATTERN: PALADIN A2UI ENGINE, SSE STREAM PARSER & STEP DRILL-DOWN VISUALIZER
  * Real-time event streaming, dynamic component rendering, and interactive blueprint inspection.
  */
 
@@ -16,7 +16,7 @@ const STEP_DRILLDOWN_DATA = {
         ],
         col2Title: "2. Protocol Contract & Envelope",
         codeSnippet: `{
-  "orchestrator": "Antigravity-v3.0",
+  "orchestrator": "Paladin-v3.0",
   "governance_mode": "BOUNDED_EMERGENCE",
   "intent_context": {
     "anchors": ["okf-fiduciary-std", "okf-tax-alpha"],
@@ -132,7 +132,7 @@ rule("policy-pii-phi-guardrail"):
     }
 };
 
-class AntigravityUiEngine {
+class PaladinUiEngine {
     constructor(streamApiUrl, terminalId, a2uiViewportId) {
         this.streamApiUrl = streamApiUrl;
         this.terminalId = terminalId;
@@ -162,7 +162,7 @@ class AntigravityUiEngine {
             </div>
         `;
 
-        this.renderLog("Antigravity-v3.0", `⚓ Initializing Bounded Emergence stream for intent: "${prompt}"`, "thought-log");
+        this.renderLog("Paladin-v3.0", `⚓ Initializing Bounded Emergence stream for intent: "${prompt}"`, "thought-log");
 
         const queryUrl = `${this.streamApiUrl}?prompt=${encodeURIComponent(prompt)}&session_id=${encodeURIComponent(sessionId)}&tenant_id=${encodeURIComponent(tenantId)}`;
         this.activeEventSource = new EventSource(queryUrl);
@@ -761,21 +761,21 @@ function setupScenarioSwitcher(engine, promptInput) {
         "scenario-tax-alpha": {
             title: "The Autonomous Wealth Firm: HNW Tax-Loss Harvesting & Tech De-Concentration",
             challenge: "High equity concentration (+8.2% US Large Cap drift) creates severe downside exposure and unrealized capital loss drag.",
-            solution: "Antigravity deploys Bounded Emergence to harvest $28.4k in tax losses, rebalances factor risk, and enforces IRS 30-day wash-sale barriers.",
+            solution: "Paladin deploys Bounded Emergence to harvest $28.4k in tax losses, rebalances factor risk, and enforces IRS 30-day wash-sale barriers.",
             value: "Delivers <strong>+$42,800 net tax alpha (+42 bps)</strong>, increases Monte Carlo goal certainty to <strong>94.6%</strong>, and certifies SEC 206(4)-7 compliance.",
             prompt: "Execute strategic portfolio rebalancing, tax-alpha harvesting, and fiduciary review"
         },
         "scenario-cross-border": {
             title: "The Autonomous Wealth Firm: Cross-Border Wealth & Multi-Currency Inheritance",
             challenge: "34% unhedged Eurozone exposure creates currency drag across US/UK dual-citizen estate trust accounts.",
-            solution: "Antigravity discovers foreign tax treaty credits (FTC), applies dynamic FX hedging, and verifies FATCA/CRS compliance across borders.",
+            solution: "Paladin discovers foreign tax treaty credits (FTC), applies dynamic FX hedging, and verifies FATCA/CRS compliance across borders.",
             value: "Unlocks <strong>+$118,500 foreign tax alpha (+139 bps)</strong>, elevates generational preservation certainty to <strong>96.2%</strong>.",
             prompt: "Execute cross-border multi-currency estate portfolio restructuring and FATCA review"
         },
         "scenario-10b51": {
             title: "The Autonomous Wealth Firm: Executive 10b5-1 Liquidity & CRUT Optimization",
             challenge: "Corporate executive holds 68% concentrated single-stock position with impending lockup expiration.",
-            solution: "Antigravity generates scheduled 10b5-1 staged liquidations into a Charitable Remainder Unitrust (CRUT) with SEC safe harbor verification.",
+            solution: "Paladin generates scheduled 10b5-1 staged liquidations into a Charitable Remainder Unitrust (CRUT) with SEC safe harbor verification.",
             value: "Mitigates <strong>$340,000 in capital gains tax drag (+283 bps)</strong> and secures <strong>97.8%</strong> philanthropic goal attainment.",
             prompt: "Execute executive 10b5-1 staged liquidation and CRUT tax-shield optimization"
         }
@@ -808,9 +808,12 @@ function setupScenarioSwitcher(engine, promptInput) {
     return () => currentScenario;
 }
 
+// Backwards compatibility alias
+const AntigravityUiEngine = PaladinUiEngine;
+
 // Bootstrap
 document.addEventListener("DOMContentLoaded", () => {
-    const engine = new AntigravityUiEngine(
+    const engine = new PaladinUiEngine(
         "/api/chat/stream",
         "chat-terminal",
         "a2ui-viewport"
@@ -842,7 +845,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 </div>
             `;
 
-            engine.renderLog("Antigravity-v3.0", `⚓ Initializing Bounded Emergence stream for scenario: [${scenario}]`, "thought-log");
+            engine.renderLog("Paladin-v3.0", `⚓ Initializing Bounded Emergence stream for scenario: [${scenario}]`, "thought-log");
 
             engine.activeEventSource.onmessage = (event) => {
                 try {

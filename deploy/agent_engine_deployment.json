@@ -1,23 +1,23 @@
 {
-  "resource_name": "projects/arsanjani-genai/locations/us-central1/reasoningEngines/antigravity-ae-v3",
-  "display_name": "Antigravity-v3-Enterprise-Governance-Engine",
+  "resource_name": "projects/arsanjani-genai/locations/us-central1/reasoningEngines/paladin-ae-v3",
+  "display_name": "Paladin-v3-Enterprise-Governance-Engine",
   "description": "ADK 2.6 Bounded Emergence Multi-Agent Orchestrator on Gemini Enterprise Agent Platform",
   "platform": "Gemini Enterprise Agent Platform",
   "framework": "ADK 2.6",
   "runtime": {
     "python_version": "3.11+",
-    "entrypoint": "backend.agent_engine_app:AntigravityAgentEngineApp",
+    "entrypoint": "backend.agent_engine_app:PaladinAgentEngineApp",
     "staging_bucket": "gs://arsanjani-genai-agent-engine-artifacts",
     "environment_variables": {
       "GOOGLE_GENAI_USE_VERTEXAI": "true",
       "GOOGLE_CLOUD_PROJECT": "arsanjani-genai",
       "GOOGLE_CLOUD_LOCATION": "us-central1",
-      "ANTIGRAVITY_GOVERNANCE_MODE": "BOUNDED_EMERGENCE"
+      "PALADIN_GOVERNANCE_MODE": "BOUNDED_EMERGENCE"
     }
   },
   "agents": [
     {
-      "name": "AntigravitySupervisorAgent",
+      "name": "PaladinSupervisorAgent",
       "role": "BOUNDED_EMERGENCE_SUPERVISOR",
       "model": "gemini-2.5-pro",
       "clearance": "TOP_SECRET"
@@ -54,6 +54,6 @@
     "policy-wash-sale-filter"
   ],
   "assurance_score": 0.992,
-  "deployed_at": "2026-09-28T06:14:39.181820+00:00",
+  "deployed_at": "2026-09-28T06:32:52.347616+00:00",
   "status": "ACTIVE_SERVING"
 }

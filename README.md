@@ -1,4 +1,4 @@
-# ⚡ ANTIGRAVITY v3.0 ENTERPRISE
+# ⚡ PALADIN v3.0 ENTERPRISE
 ### Bounded Emergence Multi-Agent Governance Engine on Gemini Enterprise Agent Platform
 **Capgemini SPARK 2026 CXO Forum Showcase**
 
@@ -10,11 +10,11 @@ Enterprise AI automation is undergoing a fundamental phase shift from **rigid, d
 
 - **The Limitation of Static DAGs**: Deterministic pipelines break immediately under fluid financial markets, shifting cross-border regulatory mandates, and unexpected client life events.
 - **The Danger of Unbounded LLM Autonomy**: Unconstrained multi-agent loops introduce critical enterprise failure taxonomies: **goal drift**, **collaborative hallucinations**, **cascading recursion loops**, and **untraceable decision trees**.
-- **The Antigravity Solution — Bounded Emergence**: Antigravity introduces **Emergence Engineering governed by Bounded Emergence**. It unleashes runtime cognitive autonomy and dynamic path generation while binding all agent turns within **Open Knowledge Format (OKF 2.0)** procedural anchors, pre-flight **Agent Simulation ($S_a \ge 0.98$)**, and sub-millisecond **Common Expression Language (CEL)** Gateway policy checkpoints.
+- **The Paladin Solution — Bounded Emergence**: Paladin introduces **Emergence Engineering governed by Bounded Emergence**. It unleashes runtime cognitive autonomy and dynamic path generation while binding all agent turns within **Open Knowledge Format (OKF 2.0)** procedural anchors, pre-flight **Agent Simulation ($S_a \ge 0.98$)**, and sub-millisecond **Common Expression Language (CEL)** Gateway policy checkpoints.
 
 ```
 ===================================================================================
-SYSTEM IDENTIFIER: ANTIGRAVITY-v3.0-ENTERPRISE
+SYSTEM IDENTIFIER: PALADIN-v3.0-ENTERPRISE
 PLATFORM BINDING: Gemini Enterprise Agent Platform (Registry, Gateways, Policies)
 RUNTIME ENGINE: Vertex AI Agent Engine (Reasoning Engine Specification)
 FRAMEWORK: ADK 2.6 (Agent Development Kit) | UI: Schema-Driven A2UI
@@ -26,7 +26,7 @@ PROJECT ID: arsanjani-genai | LOCATION: us-central1
 
 ## 🎯 Enterprise Domain Blueprint: The Autonomous Wealth Firm
 
-The Antigravity showcase demonstrates end-to-end multi-agent orchestration for **High-Net-Worth (HNW) Portfolio Rebalancing, Tax-Alpha Harvesting, and Fiduciary Suitability**:
+The Paladin showcase demonstrates end-to-end multi-agent orchestration for **High-Net-Worth (HNW) Portfolio Rebalancing, Tax-Alpha Harvesting, and Fiduciary Suitability**:
 
 | Stakeholder Lens | Core Value Realization | Metric / Impact |
 | :--- | :--- | :--- |
@@ -39,14 +39,14 @@ The Antigravity showcase demonstrates end-to-end multi-agent orchestration for *
 
 ## 📐 Mathematical Formulation & Objective Functions
 
-Antigravity operates on a dual optimization boundary:
+Paladin operates on a dual optimization boundary:
 
 ### 1. Emergence vs. Risk Objective Function
 $$\text{Maximize } f_{\max} = \text{Emergence Quality } (E_q) + \text{Governance Coverage } (G_c) + \text{Business Goal Alignment } (B_a)$$
 $$\text{Minimize } f_{\min} = \text{Goal Drift Risk } (R_{gd}) + \text{Collaborative Hallucination } (H_{col}) + \text{Unbounded Execution Risk } (R_{ub})$$
 
 ### 2. Pre-Deployment Assurance Score ($S_a$)
-Before executing non-deterministic plans in production, Antigravity executes $N=100$ parallel simulations in an isolated synthetic sandbox against injected edge cases (rate hikes, stagflation, API timeouts):
+Before executing non-deterministic plans in production, Paladin executes $N=100$ parallel simulations in an isolated synthetic sandbox against injected edge cases (rate hikes, stagflation, API timeouts):
 $$\text{Assurance Score } (S_a) = \frac{\text{Successful Safe Terminations}}{\text{Total Simulations}} \ge 0.98$$
 
 ### 3. Semantic Goal Drift Ceiling
@@ -59,7 +59,7 @@ $$\text{Cosine Sim}(V_{\text{current}}, V_{\text{intent}}) = \frac{V_{\text{curr
 
 ```
                      ┌──────────────────────────────────────────────┐
-                     │   ANTIGRAVITY SUPERVISOR ORCHESTRATOR        │
+                     │     PALADIN SUPERVISOR ORCHESTRATOR          │
                      │   Gemini 2.5 Pro | Clearance: TOP_SECRET     │
                      └──────────────────────┬───────────────────────┘
                                             │
@@ -93,7 +93,7 @@ $$\text{Cosine Sim}(V_{\text{current}}, V_{\text{intent}}) = \frac{V_{\text{curr
 
 | Agent | Class | Model Tier | Clearance | Latency SLA | Registered Tool Scope |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| **Supervisor** | `AntigravitySupervisorAgent` | **Gemini 2.5 Pro** | `TOP_SECRET` | 10 ms | Master Orchestration & Intent Anchoring |
+| **Supervisor** | `PaladinSupervisorAgent` | **Gemini 2.5 Pro** | `TOP_SECRET` | 10 ms | Master Orchestration & Intent Anchoring |
 | **Quantitative Analytics** | `QuantitativePortfolioAnalyticsAgent` | **Gemini 2.5 Pro** | `CONFIDENTIAL` | 45 ms | `CustodialPortfolioAccountingAPI`, `TaxLotHarvestingEngine`, `FactorExposureCalculator` |
 | **CRM Records** | `CRMRecordsAgent` | **Gemini 2.5 Flash** | `RESTRICTED` | 30 ms | `EnterpriseCRMQueryService`, `RiskToleranceProfiler` |
 | **Compliance Sentinel** | `ComplianceSentinelAgent` | **Gemini 2.5 Pro** | `TOP_SECRET` | 20 ms | `SecFiduciarySuitabilityChecker`, `RegBiConflictDetector`, `WashSaleFilter` |
@@ -135,10 +135,10 @@ $$\text{Cosine Sim}(V_{\text{current}}, V_{\text{intent}}) = \frac{V_{\text{curr
 
 ## 🚀 Vertex AI Agent Engine Deployment
 
-Antigravity conforms directly to Google Cloud Vertex AI **Agent Engine / Reasoning Engine** runtime standards:
+Paladin conforms directly to Google Cloud Vertex AI **Agent Engine / Reasoning Engine** runtime standards:
 
-- **Resource Name**: `projects/arsanjani-genai/locations/us-central1/reasoningEngines/antigravity-ae-v3`
-- **Entrypoint**: `backend.agent_engine_app:AntigravityAgentEngineApp`
+- **Resource Name**: `projects/arsanjani-genai/locations/us-central1/reasoningEngines/paladin-ae-v3`
+- **Entrypoint**: `backend.agent_engine_app:PaladinAgentEngineApp`
 - **Staging Bucket**: `gs://arsanjani-genai-agent-engine-artifacts`
 - **Environment**: `GOOGLE_GENAI_USE_VERTEXAI=true`
 
@@ -160,7 +160,7 @@ export GOOGLE_CLOUD_LOCATION="us-central1"
 ### 1. Environment Setup
 ```bash
 # Clone repository
-git clone https://github.com/capgemini-spark-2026.git
+git clone https://github.com/aarsanjani/capgemini-spark-2026.git
 cd capgemini-spark-2026
 
 # Create and activate virtual environment
@@ -187,7 +187,7 @@ pip install -r backend/requirements.txt
 ## 📂 Repository Structure
 
 ```text
-├── GEMINI.md                                  # Antigravity Governance System Prompt & Platform Rules
+├── GEMINI.md                                  # Paladin Governance System Prompt & Platform Rules
 ├── architecture.md                            # Comprehensive Enterprise Architecture & Math Spec
 ├── orchestration.md                           # 5-State Operational Lifecycle & Protocols
 ├── sequential_multi_agent_development_guide.md# ADK 2.6 Agent Development Blueprint

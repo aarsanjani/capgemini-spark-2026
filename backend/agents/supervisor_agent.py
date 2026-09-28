@@ -1,5 +1,5 @@
 """
-ADK 2.6 Master Governance Supervisor Agent (Antigravity-v3.0)
+ADK 2.6 Master Governance Supervisor Agent (Paladin-v3.0)
 Orchestrates worker agents under Bounded Emergence, verifies Agent Registry
 attestations, and coordinates Gateway policy checks.
 """
@@ -11,15 +11,15 @@ from backend.agents.crm_records_agent import CRMRecordsAgent
 from backend.agents.compliance_sentinel_agent import ComplianceSentinelAgent
 from backend.agents.operations_simulation_agent import OperationsSimulationAgent
 
-class AntigravitySupervisorAgent(AdkAgent):
+class PaladinSupervisorAgent(AdkAgent):
     def __init__(self):
         super().__init__(
-            name="antigravity_supervisor_agent",
+            name="paladin_supervisor_agent",
             role="BOUNDED_EMERGENCE_SUPERVISOR",
             model="gemini-2.5-pro",
             clearance="TOP_SECRET",
             system_instruction=(
-                "You are Antigravity-v3.0, the Master Governance Orchestrator on the Gemini Enterprise "
+                "You are Paladin-v3.0, the Master Governance Orchestrator on the Gemini Enterprise "
                 "Agent Platform. Govern non-deterministic multi-agent workflows under Bounded Emergence."
             ),
             tools=[],
@@ -41,3 +41,7 @@ class AntigravitySupervisorAgent(AdkAgent):
             "thought": f"⚓ Intent Anchored: '{prompt}'. Decomposing workflow across {len(self.workers)} certified domain agents.",
             "workers_available": list(self.workers.keys())
         }
+
+# Alias for backwards compatibility
+AntigravitySupervisorAgent = PaladinSupervisorAgent
+

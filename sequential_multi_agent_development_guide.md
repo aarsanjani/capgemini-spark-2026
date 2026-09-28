@@ -8,11 +8,11 @@ By applying the principles of **Emergence Engineering** governed by **Bounded Em
 
 ## 1. Architectural Blueprint (Bounded Emergence Topology)
 
-The industry paradigm has shifted from rigid, deterministic DAGs to adaptive Multi-Agent Systems (MAS). In this architecture, worker agents dynamically plan and execute solution paths at runtime, while the **Antigravity Governance Engine** anchors their actions to deterministic business rules and Open Knowledge Format (OKF 2.0) knowledge graphs.
+The industry paradigm has shifted from rigid, deterministic DAGs to adaptive Multi-Agent Systems (MAS). In this architecture, worker agents dynamically plan and execute solution paths at runtime, while the **Paladin Governance Engine** anchors their actions to deterministic business rules and Open Knowledge Format (OKF 2.0) knowledge graphs.
 
 ```mermaid
 graph TD
-    A[Antigravity Governance Orchestrator] -->|1. Anchors Intent to OKF 2.0| Anchors[OKF Procedural Anchors]
+    A[Paladin Governance Orchestrator] -->|1. Anchors Intent to OKF 2.0| Anchors[OKF Procedural Anchors]
     A -->|2. Verifies Identity & ACLs| Reg[Gemini Enterprise Agent Registry]
     A -->|3. Pre-Flight Stress Test N=100| Sim[Agent Simulation Sandbox Sa >= 0.98]
     A -->|4. Dynamic Path Generation| Mesh[Non-Deterministic Adaptive Worker Mesh]
@@ -70,7 +70,7 @@ sys.modules['a2a.types'] = a2a.types
 * **The Issue**: Running agents via `InMemoryRunner.run_async(...)` will raise `SessionNotFoundError` if the session is not explicitly pre-created in the storage service.
 * **Best Practice**: Enable auto-session creation on the runner instance and explicitly check/create sessions in the service:
 ```python
-runner = InMemoryRunner(agent=antigravity_governance_engine)
+runner = InMemoryRunner(agent=paladin_governance_engine)
 runner.auto_create_session = True
 
 session = await runner.session_service.get_session(

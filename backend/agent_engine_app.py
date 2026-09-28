@@ -1,5 +1,5 @@
 """
-AGENT ENGINE RUNTIME WRAPPER: ANTIGRAVITY v3.0 ENTERPRISE
+AGENT ENGINE RUNTIME WRAPPER: PALADIN v3.0 ENTERPRISE
 Vertex AI Agent Engine / Reasoning Engine compliant entrypoint for
 deploying the ADK 2.6 Multi-Agent Bounded Emergence Orchestrator.
 """
@@ -11,7 +11,7 @@ from typing import Dict, Any, List, Optional
 from datetime import datetime, timezone
 
 from backend.agents.base_adk import AdkExecutionContext
-from backend.agents.supervisor_agent import AntigravitySupervisorAgent
+from backend.agents.supervisor_agent import PaladinSupervisorAgent, AntigravitySupervisorAgent
 from backend.agents.tools import (
     custodial_portfolio_accounting,
     tax_lot_harvesting_engine,
@@ -28,7 +28,7 @@ from backend.agents.tools import (
 logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - [%(filename)s:%(lineno)d] - %(message)s")
 
 
-class AntigravityAgentEngineApp:
+class PaladinAgentEngineApp:
     """
     Vertex AI Agent Engine deployment class.
     Conforms to the standard Agent Engine lifecycle (set_up, query, stream_query).
@@ -43,18 +43,18 @@ class AntigravityAgentEngineApp:
         self.project_id = project_id
         self.location = location
         self.tenant_id = tenant_id
-        self.supervisor: Optional[AntigravitySupervisorAgent] = None
-        self.deployment_id = f"agent-engine-antigravity-{location}-v3"
+        self.supervisor: Optional[PaladinSupervisorAgent] = None
+        self.deployment_id = f"agent-engine-paladin-{location}-v3"
 
     def set_up(self) -> None:
         """Initializes agents, tools, and Vertex AI platform bindings."""
-        logging.info(f"Setting up Antigravity Agent Engine on Vertex AI ({self.project_id} / {self.location})")
+        logging.info(f"Setting up Paladin Agent Engine on Vertex AI ({self.project_id} / {self.location})")
         os.environ["GOOGLE_GENAI_USE_VERTEXAI"] = "true"
         os.environ["GOOGLE_CLOUD_PROJECT"] = self.project_id
         os.environ["GOOGLE_CLOUD_LOCATION"] = self.location
 
-        self.supervisor = AntigravitySupervisorAgent()
-        logging.info("Antigravity Supervisor and 4 ADK 2.6 domain workers instantiated successfully.")
+        self.supervisor = PaladinSupervisorAgent()
+        logging.info("Paladin Supervisor and 4 ADK 2.6 domain workers instantiated successfully.")
 
     def query(
         self,
@@ -120,9 +120,9 @@ class AntigravityAgentEngineApp:
         """
         Yields real-time streaming frames for SSE / Agent UI consumers.
         """
-        from backend.app import AntigravityGovernanceEngine
+        from backend.app import PaladinGovernanceEngine
         sess_id = session_id or f"session-ae-stream-{int(datetime.now(timezone.utc).timestamp())}"
-        engine = AntigravityGovernanceEngine(
+        engine = PaladinGovernanceEngine(
             session_id=sess_id,
             declarative_intent=prompt,
             tenant_id=self.tenant_id,
@@ -130,3 +130,7 @@ class AntigravityAgentEngineApp:
         )
         for frame in engine.execute_bounded_workflow():
             yield frame
+
+# Alias for backwards compatibility
+AntigravityAgentEngineApp = PaladinAgentEngineApp
+

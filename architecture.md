@@ -1,7 +1,7 @@
-# Architectural Specification: Antigravity Governance Engine (Gemini Enterprise Agent Platform)
+# Architectural Specification: Paladin Governance Engine (Gemini Enterprise Agent Platform)
 ## Bounded Emergence Multi-Agent Platform with Real-Time Trace Streaming, Native Gateways & Schema-Driven Dynamic UI (A2UI)
 
-This document serves as the master technical reference for the **Antigravity Governance Engine** architecture on the **Gemini Enterprise Agent Platform**. It details the system design boundaries, decoupled network components, zero-trust security postures, and enterprise software engineering patterns governing non-deterministic multi-agent workflows bounded by procedural anchors, Open Knowledge Format (OKF 2.0) data structures, centralized policies, agent simulation, and real-time observability.
+This document serves as the master technical reference for the **Paladin Governance Engine** architecture on the **Gemini Enterprise Agent Platform**. It details the system design boundaries, decoupled network components, zero-trust security postures, and enterprise software engineering patterns governing non-deterministic multi-agent workflows bounded by procedural anchors, Open Knowledge Format (OKF 2.0) data structures, centralized policies, agent simulation, and real-time observability.
 
 ---
 
@@ -9,7 +9,7 @@ This document serves as the master technical reference for the **Antigravity Gov
 
 The enterprise automation paradigm is undergoing a fundamental shift: from rigid, deterministic DAGs (which break under fluid real-world inputs) to non-deterministic, adaptive Multi-Agent Systems (MAS). However, unconstrained autonomy creates severe enterprise failure modes: goal drift, collaborative hallucinations, cascading loops, and fiduciary violations.
 
-**Antigravity** resolves this via **Bounded Emergence**: unleashing runtime cognitive autonomy and dynamic path generation while binding agents within deterministic procedural anchors, Open Knowledge Format (OKF 2.0) data structures, and the native governance pillars of the Gemini Enterprise Agent Platform.
+**Paladin** resolves this via **Bounded Emergence**: unleashing runtime cognitive autonomy and dynamic path generation while binding agents within deterministic procedural anchors, Open Knowledge Format (OKF 2.0) data structures, and the native governance pillars of the Gemini Enterprise Agent Platform.
 
 ```mermaid
 graph TD
@@ -32,7 +32,7 @@ graph TD
 
     %% Backend Topology
     subgraph Backend [Backend Orchestration Service - Agent Engine]
-        C[Reactive Streaming Controller API] -->|Dispatches Session| D[Antigravity Governance Orchestrator]
+        C[Reactive Streaming Controller API] -->|Dispatches Session| D[Paladin Governance Orchestrator]
         D <-->|State & Anchors| E[OKF 2.0 Knowledge Graph & Procedural Anchors]
         
         subgraph AgentMesh [Non-Deterministic Adaptive Worker Mesh]
@@ -62,7 +62,7 @@ graph TD
 
 ## 2. Mathematical Formulation of Bounded Emergence
 
-The Antigravity Orchestrator optimizes multi-agent execution across dual objective functions:
+The Paladin Orchestrator optimizes multi-agent execution across dual objective functions:
 
 ### Global Objective Function
 $$\text{Maximize } f_{\max} = E_q(\text{plan}) + G_c(\text{anchors}) + B_a(\text{intent})$$
@@ -165,7 +165,7 @@ OKF 2.0 provides the structured epistemic knowledge substrate for the multi-agen
 ```
 /
 ├── backend/
-│   ├── app.py                 # Antigravity Governance Engine, Multi-Scenario & SSE API
+│   ├── app.py                 # Paladin Governance Engine, Multi-Scenario & SSE API
 │   └── requirements.txt       # Dependencies (google-genai, flask, flask-cors, pytest)
 ├── frontend/
 │   ├── templates/
