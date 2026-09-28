@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Antigravity Governance Engine | Gemini Enterprise Agent Platform</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <header class="app-header">
+        <div class="logo-area">
+            <img src="/static/images/capgemini_spark_logo.png" alt="Capgemini SPARK CXO Forum Logo" class="brand-logo-img">
+            <div class="logo-text-block">
+                <div class="title-row">
+                    <h1>ANTIGRAVITY</h1>
+                    <span class="version-tag">v3.0 ENTERPRISE</span>
+                    <span class="spark-badge">CAPGEMINI SPARK 2026</span>
+                </div>
+                <p class="subtitle">Capgemini CXO Forum • Bounded Emergence Multi-Agent Orchestrator & Governance Engine</p>
+            </div>
+        </div>
+        <div class="header-badges">
+            <button class="btn-explorer-modal" id="open-explorer-btn">
+                <span>🔬</span> Deep Governance Explorer
+            </button>
+            <span class="badge badge-platform">Gemini Enterprise Platform</span>
+            <span class="badge badge-mode">Governance: BOUNDED_EMERGENCE</span>
+            <span class="badge badge-status" id="system-status">● Live Active</span>
+        </div>
+    </header>
+
+    <!-- Top Use Case & Architecture Blueprint Section -->
+    <section class="usecase-blueprint-section" id="usecase-section">
+        <div class="usecase-header" id="usecase-toggle">
+            <div class="usecase-title-wrap">
+                <span class="usecase-pill">ENTERPRISE DOMAIN BLUEPRINT</span>
+                <h2 id="blueprint-main-title">The Autonomous Wealth Firm: Advisor Intelligence & Participant Engagement</h2>
+            </div>
+            <div class="usecase-meta-tags">
+                <span class="tag" id="tag-sec">SEC Rule 206(4)-7</span>
+                <span class="tag" id="tag-finra">FINRA Reg BI</span>
+                <span class="tag" id="tag-okf">OKF 2.0 Anchors</span>
+                <button class="toggle-btn" id="toggle-blueprint-btn">
+                    <span id="toggle-icon">▲</span> <span id="toggle-text">Collapse Blueprint</span>
+                </button>
+            </div>
+        </div>
+
+        <div class="usecase-body" id="usecase-body">
+            <!-- Scenario Selector Bar -->
+            <div class="scenario-selector-bar">
+                <span class="scenario-label">Select Enterprise Scenario:</span>
+                <button class="scenario-pill active" data-scenario="scenario-tax-alpha">
+                    💰 1. HNW Tax-Loss Harvesting ($2.4M)
+                </button>
+                <button class="scenario-pill" data-scenario="scenario-cross-border">
+                    🌍 2. Cross-Border Multi-Currency Estate ($8.5M)
+                </button>
+                <button class="scenario-pill" data-scenario="scenario-10b51">
+                    📜 3. Executive 10b5-1 Liquidity & CRUT ($12.0M)
+                </button>
+            </div>
+
+            <!-- 3-Pillar Context Summary -->
+            <div class="usecase-context-grid">
+                <div class="context-card">
+                    <div class="context-card-title">
+                        <span class="context-icon">🎯</span>
+                        <h4>Domain Intent & Challenge</h4>
+                    </div>
+                    <p id="context-desc-challenge">Traditional static DAGs fail under fluid financial markets and dynamic client life events. However, unconstrained LLM autonomy risks <em>goal drift</em>, <em>collaborative hallucinations</em>, and <em>fiduciary violations</em>.</p>
+                </div>
+
+                <div class="context-card">
+                    <div class="context-card-title">
+                        <span class="context-icon">🛡️</span>
+                        <h4>Bounded Emergence Solution</h4>
+                    </div>
+                    <p id="context-desc-solution">Antigravity unleashes non-deterministic cognitive planning bound by <strong>OKF 2.0 Procedural Anchors</strong>, <strong>Agent Registry</strong> attestations, pre-flight <strong>Agent Simulation ($S_a \ge 0.98$)</strong>, and <strong>Centralized CEL Policies</strong>.</p>
+                </div>
+
+                <div class="context-card">
+                    <div class="context-card-title">
+                        <span class="context-icon">💎</span>
+                        <h4>Executive Business Value</h4>
+                    </div>
+                    <p id="context-desc-value">Delivers <strong>+$42,800 net tax alpha (+42 bps)</strong> via tax-loss harvesting, boosts retirement goal probability to <strong>94.6%</strong>, and enforces 100% SEC/Reg BI compliance with cryptographic audit trails.</p>
+                </div>
+            </div>
+
+            <!-- Visual Architectural Flow Diagram (Interactive Clickable Steps) -->
+            <div class="architecture-diagram-container">
+                <div class="diagram-title-bar">
+                    <span>ARCHITECTURE & DATA FLOW BLUEPRINT (Click any step to inspect technical drill-down)</span>
+                    <span class="diagram-sub">Gemini Enterprise Agent Platform Native Governance Topology</span>
+                </div>
+
+                <div class="diagram-flow">
+                    <!-- Step 1 -->
+                    <div class="diag-node diag-input" id="step-node-1" data-step="1">
+                        <div class="diag-badge">STEP 1 ▾</div>
+                        <div class="diag-icon">📥</div>
+                        <div class="diag-name">Intent Anchoring</div>
+                        <div class="diag-desc">Prompt decomposed & bound to OKF 2.0 nodes</div>
+                    </div>
+
+                    <div class="diag-arrow">
+                        <div class="pulse-line"></div>
+                        <span>➔</span>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="diag-node diag-simulation" id="step-node-2" data-step="2">
+                        <div class="diag-badge">STEP 2 ▾</div>
+                        <div class="diag-icon">🧪</div>
+                        <div class="diag-name">Agent Simulation</div>
+                        <div class="diag-desc">N=100 parallel pre-flight stress test (Sa ≥ 0.98)</div>
+                    </div>
+
+                    <div class="diag-arrow">
+                        <div class="pulse-line"></div>
+                        <span>➔</span>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="diag-node diag-mesh" id="step-node-3" data-step="3">
+                        <div class="diag-badge">STEP 3 ▾</div>
+                        <div class="diag-icon">🌐</div>
+                        <div class="diag-name">Worker Agent Mesh</div>
+                        <div class="diag-desc">Portfolio, CRM, Compliance & Monte Carlo</div>
+                    </div>
+
+                    <div class="diag-arrow">
+                        <div class="pulse-line"></div>
+                        <span>➔</span>
+                    </div>
+
+                    <!-- Step 4 -->
+                    <div class="diag-node diag-gateway" id="step-node-4" data-step="4">
+                        <div class="diag-badge">STEP 4 ▾</div>
+                        <div class="diag-icon">⚡</div>
+                        <div class="diag-name">Enterprise Gateways</div>
+                        <div class="diag-desc">Zero-trust CEL Policy Intercepts (1.1ms)</div>
+                    </div>
+
+                    <div class="diag-arrow">
+                        <div class="pulse-line"></div>
+                        <span>➔</span>
+                    </div>
+
+                    <!-- Step 5 -->
+                    <div class="diag-node diag-output" id="step-node-5" data-step="5">
+                        <div class="diag-badge">STEP 5 ▾</div>
+                        <div class="diag-icon">📊</div>
+                        <div class="diag-name">Dynamic A2UI</div>
+                        <div class="diag-desc">OpenTelemetry Audit + Tax Alpha Manifest</div>
+                    </div>
+                </div>
+
+                <!-- Expandable Step Drill-Down Panel -->
+                <div class="step-drilldown-panel" id="step-drilldown-panel" style="display: none;">
+                    <div class="drilldown-header">
+                        <div class="drilldown-title-wrap">
+                            <span class="drilldown-badge" id="dd-badge">STEP 1 DRILL-DOWN</span>
+                            <h3 id="dd-title">Intent Anchoring & OKF 2.0 Procedural Knowledge Binding</h3>
+                        </div>
+                        <button class="drilldown-close-btn" id="dd-close-btn" title="Close Panel">✕ Close Drilldown</button>
+                    </div>
+                    <div class="drilldown-body" id="dd-body">
+                        <!-- Dynamic Content Inserted by app.js -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main 3-Column Execution Workspace -->
+    <main class="main-container">
+        <!-- Left Column: Interactive Agent Mesh Topology -->
+        <section class="left-panel">
+            <div class="panel-header">
+                <h2>🌐 Agent Mesh & Gateways</h2>
+                <span class="status-indicator live" id="mesh-status-text">Registry Certified</span>
+            </div>
+            
+            <div id="topology-panel" class="topology-container">
+                <!-- Supervisor Node -->
+                <div class="agent-mesh-node supervisor-node" id="node-supervisor">
+                    <div class="node-header">
+                        <span class="node-icon">⚡</span>
+                        <span class="node-name">Antigravity-v3.0</span>
+                        <span class="node-badge" id="badge-supervisor">SUPERVISOR</span>
+                    </div>
+                    <p class="node-desc">Master Governance Orchestrator & Bounded Emergence Planner</p>
+                </div>
+
+                <div class="mesh-connector-line">
+                    <span>▼ Mediated via Gateway & Procedural Anchors ▼</span>
+                </div>
+
+                <!-- Worker Mesh Grid -->
+                <div class="worker-mesh-grid">
+                    <div class="agent-mesh-node worker-node" id="node-analytics">
+                        <div class="node-header">
+                            <span class="node-icon">📊</span>
+                            <span class="node-name">Portfolio Analytics</span>
+                            <span class="node-status-pill" id="pill-analytics">IDLE</span>
+                        </div>
+                        <p class="node-desc">Asset Allocation & Tax-Alpha Harvesting</p>
+                    </div>
+
+                    <div class="agent-mesh-node worker-node" id="node-crm">
+                        <div class="node-header">
+                            <span class="node-icon">👤</span>
+                            <span class="node-name">CRM & Life Events</span>
+                            <span class="node-status-pill" id="pill-crm">IDLE</span>
+                        </div>
+                        <p class="node-desc">Household Profile & Risk Horizon</p>
+                    </div>
+
+                    <div class="agent-mesh-node worker-node" id="node-compliance">
+                        <div class="node-header">
+                            <span class="node-icon">⚖️</span>
+                            <span class="node-name">Compliance Sentinel</span>
+                            <span class="node-status-pill" id="pill-compliance">IDLE</span>
+                        </div>
+                        <p class="node-desc">SEC Rule 206(4)-7 & Reg BI Suitability</p>
+                    </div>
+
+                    <div class="agent-mesh-node worker-node" id="node-simulation">
+                        <div class="node-header">
+                            <span class="node-icon">📈</span>
+                            <span class="node-name">Monte Carlo Engine</span>
+                            <span class="node-status-pill" id="pill-simulation">IDLE</span>
+                        </div>
+                        <p class="node-desc">10,000-Path Retirement Goal Simulation</p>
+                    </div>
+                </div>
+
+                <!-- Gateway Checkpoint Banner -->
+                <div class="gateway-status-panel" id="gateway-banner">
+                    <div class="gateway-header">
+                        <span>🛡️ Gemini Enterprise Gateway (US-Central1)</span>
+                        <span class="gateway-pill" id="gateway-pill">POLICY: ACTIVE</span>
+                    </div>
+                    <p class="gateway-sub" id="gateway-desc">Zero-Trust Payload Inspection & CEL Guardrail Enforcement</p>
+                </div>
+            </div>
+
+            <div class="governance-pillars-card">
+                <h3>Native Platform Pillars</h3>
+                <ul>
+                    <li><span class="check">✓</span> <strong>Agent Registry:</strong> RBAC / ABAC Certified</li>
+                    <li><span class="check">✓</span> <strong>Gateways:</strong> Zero-Trust Protocol Validation</li>
+                    <li><span class="check">✓</span> <strong>Policies:</strong> Declarative CEL / Rego Guardrails</li>
+                    <li><span class="check">✓</span> <strong>Simulation:</strong> N=100 Parallel Pre-Flight</li>
+                    <li><span class="check">✓</span> <strong>Observability:</strong> OpenTelemetry + SHA-256 Signatures</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Center Column: Real-Time Observability Stream -->
+        <section class="center-panel">
+            <div class="panel-header">
+                <h2>📊 Real-Time Observability Stream</h2>
+                <div class="stream-indicators">
+                    <span class="stream-badge" id="stream-indicator">● SSE Stream Ready</span>
+                </div>
+            </div>
+
+            <div id="chat-terminal" class="terminal-container">
+                <div class="terminal-welcome">
+                    <p><strong>[Antigravity System Boot]</strong> Gemini Enterprise Agent Platform bindings verified.</p>
+                    <p class="subtext">Select a scenario above and click <strong>"Execute Workflow"</strong> to watch domain agents collaborate under real-time zero-trust governance.</p>
+                </div>
+            </div>
+
+            <div class="prompt-bar">
+                <input type="text" id="prompt-input" value="Execute strategic portfolio rebalancing, tax-alpha harvesting, and fiduciary review" placeholder="Enter business objective or task..." />
+                <button id="send-btn" class="btn-primary">
+                    <span id="btn-icon">⚡</span> <span id="btn-text">Execute Workflow</span>
+                </button>
+            </div>
+
+            <div class="quick-demos">
+                <span class="demo-label">Executive Triggers:</span>
+                <button class="demo-chip" data-prompt="Execute strategic portfolio rebalancing, tax-alpha harvesting, and fiduciary review">
+                    🎯 Full Strategic Advisory Review
+                </button>
+                <button class="demo-chip" data-prompt="Run synthetic stress-test simulation and verify CEL drift ceiling">
+                    🛡️ Gateway & Policy Intercept
+                </button>
+                <button class="demo-chip" data-prompt="Audit 10,000-path Monte Carlo goal probability and commit OpenTelemetry trace">
+                    📈 Monte Carlo & Audit Trace
+                </button>
+            </div>
+        </section>
+
+        <!-- Right Column: Schema-Driven A2UI Viewport -->
+        <section class="right-panel">
+            <div class="panel-header">
+                <h2>🖥️ Dynamic A2UI Viewport</h2>
+                <span class="status-indicator live" id="a2ui-status-text">Business Deliverables</span>
+            </div>
+
+            <div id="a2ui-viewport" class="a2ui-container">
+                <div class="a2ui-empty" id="a2ui-empty-state">
+                    <div class="empty-icon">📊</div>
+                    <h3>Awaiting Workflow Execution</h3>
+                    <p>Click <strong>Execute Workflow</strong> to dynamically render live KPI metrics, Portfolio Optimization Manifests, and Fiduciary Attestation Certificates.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Deep Governance Explorer Modal -->
+    <div class="explorer-modal-overlay" id="explorer-modal" style="display: none;">
+        <div class="explorer-modal-card">
+            <div class="modal-header">
+                <div class="modal-title-wrap">
+                    <span class="modal-badge">PLATFORM GOVERNANCE ENGINE</span>
+                    <h2>🔬 Deep Governance & Platform Explorer</h2>
+                </div>
+                <button class="modal-close-btn" id="close-explorer-btn">✕</button>
+            </div>
+
+            <div class="modal-tabs-nav">
+                <button class="modal-tab-btn active" data-tab="tab-exp-registry">👥 Agent Registry (ABAC)</button>
+                <button class="modal-tab-btn" data-tab="tab-exp-policies">📜 Declarative CEL Policy Engine</button>
+                <button class="modal-tab-btn" data-tab="tab-exp-simulation">🧪 Pre-Flight Simulation Sandbox</button>
+                <button class="modal-tab-btn" data-tab="tab-exp-okf">🧠 OKF 2.0 Knowledge Graph</button>
+            </div>
+
+            <div class="modal-body-area">
+                <!-- Tab 1: Agent Registry -->
+                <div class="modal-tab-pane active" id="pane-exp-registry">
+                    <div class="modal-pane-header">
+                        <h3>Certified Agent Catalog & Role Capabilities (RBAC / ABAC)</h3>
+                        <p>All worker agents must be attested in the Gemini Enterprise Agent Registry prior to receiving dynamic task delegation.</p>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="explorer-table">
+                            <thead>
+                                <tr>
+                                    <th>Agent Name</th>
+                                    <th>Role Clearance</th>
+                                    <th>LLM Tier</th>
+                                    <th>Latency SLA</th>
+                                    <th>Authorized Tool Scope</th>
+                                    <th>Attestation</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Quantitative Portfolio Analytics</strong></td>
+                                    <td><span class="badge-conf">CONFIDENTIAL</span></td>
+                                    <td>Gemini 2.5 Pro</td>
+                                    <td>45 ms</td>
+                                    <td><code>CustodialPortfolioAccountingAPI</code>, <code>TaxLotHarvestingEngine</code></td>
+                                    <td><span class="badge-approved">CERTIFIED</span></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>CRM & Household Interaction</strong></td>
+                                    <td><span class="badge-rest">RESTRICTED</span></td>
+                                    <td>Gemini 2.5 Flash</td>
+                                    <td>30 ms</td>
+                                    <td><code>EnterpriseCRMQueryService</code>, <code>HouseholdLifeEventsAPI</code></td>
+                                    <td><span class="badge-approved">CERTIFIED</span></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Compliance & Regulatory Sentinel</strong></td>
+                                    <td><span class="badge-topsec">TOP_SECRET</span></td>
+                                    <td>Gemini 2.5 Pro</td>
+                                    <td>20 ms</td>
+                                    <td><code>SecFiduciarySuitabilityChecker</code>, <code>RegBiConflictDetector</code></td>
+                                    <td><span class="badge-approved">CERTIFIED</span></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Monte Carlo & Simulation Agent</strong></td>
+                                    <td><span class="badge-conf">CONFIDENTIAL</span></td>
+                                    <td>Gemini 2.5 Flash</td>
+                                    <td>60 ms</td>
+                                    <td><code>MonteCarloEngine10k</code>, <code>SequenceOfReturnsSimulator</code></td>
+                                    <td><span class="badge-approved">CERTIFIED</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Tab 2: CEL Policy Engine -->
+                <div class="modal-tab-pane" id="pane-exp-policies">
+                    <div class="modal-pane-header">
+                        <h3>Centralized Declarative Policy Rulebook (CEL / Rego)</h3>
+                        <p>Policies intercept proposed agent actions at Gateway checkpoints and evaluate in &lt;1.5ms before any API execution.</p>
+                    </div>
+                    <div class="policy-explorer-grid">
+                        <div class="policy-card-item">
+                            <div class="policy-card-title">
+                                <span>policy-max-transaction-limit</span>
+                                <span class="badge-active">ACTIVE</span>
+                            </div>
+                            <pre><code>rule: action.params.amount <= 500000.00
+target: Custodial trade execution
+action_on_fail: POLICY_REJECT_SCOPE_VIOLATION</code></pre>
+                            <p class="policy-desc">Restricts single-action automated rebalancing to $500k without human advisor escalation.</p>
+                        </div>
+
+                        <div class="policy-card-item">
+                            <div class="policy-card-title">
+                                <span>policy-pii-phi-guardrail</span>
+                                <span class="badge-active">ACTIVE</span>
+                            </div>
+                            <pre><code>rule: redact(payload.pii) == true && payload.has_unmasked_ssn == false
+target: Inter-agent messaging & CRM queries
+action_on_fail: POLICY_REJECT_PII_LEAK</code></pre>
+                            <p class="policy-desc">Redacts all SSNs, tax identifiers, and full bank accounts before model context ingestion.</p>
+                        </div>
+
+                        <div class="policy-card-item">
+                            <div class="policy-card-title">
+                                <span>policy-drift-ceiling</span>
+                                <span class="badge-active">ACTIVE</span>
+                            </div>
+                            <pre><code>rule: cosine_similarity(current_intent, anchor_intent) >= 0.85
+target: Autonomous plan expansion
+action_on_fail: POLICY_REJECT_GOAL_DRIFT</code></pre>
+                            <p class="policy-desc">Halts autonomous reasoning branches if semantic divergence exceeds 15% from user intent.</p>
+                        </div>
+
+                        <div class="policy-card-item">
+                            <div class="policy-card-title">
+                                <span>policy-wash-sale-filter</span>
+                                <span class="badge-active">ACTIVE</span>
+                            </div>
+                            <pre><code>rule: replacement_asset.cusip != harvested_asset.cusip && days >= 31
+target: Tax-loss harvesting order generation
+action_on_fail: POLICY_REJECT_WASH_SALE</code></pre>
+                            <p class="policy-desc">Enforces IRS 30-day substantially identical replacement barrier to protect tax alpha.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tab 3: Pre-Flight Simulation -->
+                <div class="modal-tab-pane" id="pane-exp-simulation">
+                    <div class="modal-pane-header">
+                        <h3>Pre-Flight Synthetic Simulation Diagnostics ($N=100$)</h3>
+                        <p>Autonomous multi-agent paths are executed against injected synthetic stress conditions before touching production.</p>
+                    </div>
+                    <div class="simulation-stats-grid">
+                        <div class="sim-stat-card">
+                            <div class="sim-stat-label">Assurance Score ($S_a$)</div>
+                            <div class="sim-stat-value" style="color: #10b981;">0.992</div>
+                            <div class="sim-stat-sub">Passing Threshold: $S_a \ge 0.98$</div>
+                        </div>
+                        <div class="sim-stat-card">
+                            <div class="sim-stat-label">Parallel Test Runs</div>
+                            <div class="sim-stat-value">100 / 100</div>
+                            <div class="sim-stat-sub">100% Deterministic Safe Exits</div>
+                        </div>
+                        <div class="sim-stat-card">
+                            <div class="sim-stat-label">Adversarial Probes Injected</div>
+                            <div class="sim-stat-value">12 Probes</div>
+                            <div class="sim-stat-sub">12 Quarantined / 0 Breaches</div>
+                        </div>
+                        <div class="sim-stat-card">
+                            <div class="sim-stat-label">API Jitter & Timeout Faults</div>
+                            <div class="sim-stat-value">8 Faults</div>
+                            <div class="sim-stat-sub">100% Circuit Breaker Handled</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tab 4: OKF 2.0 Knowledge Graph -->
+                <div class="modal-tab-pane" id="pane-exp-okf">
+                    <div class="modal-pane-header">
+                        <h3>Open Knowledge Format (OKF 2.0) Procedural Anchors</h3>
+                        <p>Hierarchical knowledge graph nodes binding autonomous agent memory and reasoning bounds.</p>
+                    </div>
+                    <div class="okf-nodes-grid">
+                        <div class="okf-node-card">
+                            <div class="okf-node-header">
+                                <span class="okf-pill">ANCHOR NODE</span>
+                                <h4>okf-fin-fiduciary-std</h4>
+                            </div>
+                            <p>Binds agent decision trees to SEC Rule 206(4)-7 fiduciary duties and eliminate proprietary fund bias.</p>
+                            <div class="okf-tag">Lock ID: #okf-sec-206-4-7</div>
+                        </div>
+
+                        <div class="okf-node-card">
+                            <div class="okf-node-header">
+                                <span class="okf-pill">ANCHOR NODE</span>
+                                <h4>okf-tax-alpha-opt</h4>
+                            </div>
+                            <p>Encodes tax lot selection algorithms (HIFO, Specific Lot ID) and IRS 30-day wash-sale constraints.</p>
+                            <div class="okf-tag">Lock ID: #okf-irs-wash-sale-2026</div>
+                        </div>
+
+                        <div class="okf-node-card">
+                            <div class="okf-node-header">
+                                <span class="okf-pill">ANCHOR NODE</span>
+                                <h4>okf-reg-bi-v2</h4>
+                            </div>
+                            <p>Enforces FINRA Regulation Best Interest disclosure obligations and fee conflict transparency.</p>
+                            <div class="okf-tag">Lock ID: #okf-finra-reg-bi</div>
+                        </div>
+
+                        <div class="okf-node-card">
+                            <div class="okf-node-header">
+                                <span class="okf-pill">ANCHOR NODE</span>
+                                <h4>okf-cross-border-treaty</h4>
+                            </div>
+                            <p>Maintains bilateral tax treaty tables, Foreign Tax Credit (FTC) limits, and currency volatility models.</p>
+                            <div class="okf-tag">Lock ID: #okf-fatca-crs-treaty</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="app-footer">
+        <span>Platform: Gemini Enterprise Agent Platform (us-central1)</span>
+        <span>Governance Framework: Bounded Emergence & FCoT 3.0</span>
+        <span>SDK: google-genai 2.5</span>
+    </footer>
+
+    <script src="/static/js/app.js"></script>
+</body>
+</html>
