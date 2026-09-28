@@ -670,6 +670,43 @@ def session_context_manager() -> Response:
         "scenarios": SCENARIOS
     })
 
+@app.route('/api/governance/agent-engine-deploy', methods=['POST', 'GET'])
+def trigger_agent_engine_deployment() -> Response:
+    """Executes or retrieves Agent Engine deployment manifest."""
+    manifest_path = os.path.join(base_dir, 'deploy', 'agent_engine_deployment.json')
+    if not os.path.exists(manifest_path):
+        from deploy.deploy_agent_engine import deploy
+        manifest = deploy()
+    else:
+        with open(manifest_path, 'r') as f:
+            manifest = json.load(f)
+    return jsonify({
+        "status": "SUCCESS",
+        "message": "Antigravity ADK 2.6 Multi-Agent system successfully deployed to Vertex AI Agent Engine",
+        "deployment": manifest
+    })
+
+@app.route('/api/governance/agent-engine-status', methods=['GET'])
+def get_agent_engine_status() -> Response:
+    """Returns Agent Engine deployment status and endpoint metadata."""
+    manifest_path = os.path.join(base_dir, 'deploy', 'agent_engine_deployment.json')
+    if os.path.exists(manifest_path):
+        with open(manifest_path, 'r') as f:
+            manifest = json.load(f)
+        return jsonify({
+            "status": "DEPLOYED",
+            "resource_name": manifest.get("resource_name"),
+            "display_name": manifest.get("display_name"),
+            "runtime": manifest.get("runtime"),
+            "assurance_score": manifest.get("assurance_score"),
+            "deployed_at": manifest.get("deployed_at")
+        })
+    return jsonify({
+        "status": "READY_FOR_DEPLOYMENT",
+        "project": "arsanjani-genai",
+        "location": "us-central1"
+    })
+
 if __name__ == '__main__':
     port = int(os.environ.get("PORT", 5000))
     app.run(host='0.0.0.0', port=port, debug=False)

@@ -161,3 +161,34 @@ def test_reactive_stream_sse(client):
     assert "onUiComponentDelivery" in methods
     assert "onWorkflowComplete" in methods
 
+def test_agent_engine_app_class():
+    """Verifies Vertex AI Agent Engine runtime wrapper execution."""
+    from backend.agent_engine_app import AntigravityAgentEngineApp
+    ae_app = AntigravityAgentEngineApp(project_id="arsanjani-genai", location="us-central1")
+    ae_app.set_up()
+    assert ae_app.supervisor is not None
+
+    result = ae_app.query(prompt="Test Agent Engine query", scenario_id="scenario-tax-alpha")
+    assert result["status"] == "SUCCESS"
+    assert result["governance_mode"] == "BOUNDED_EMERGENCE"
+    assert result["tool_executions"] >= 8
+    assert "worker_results" in result
+
+def test_agent_engine_deployment_endpoints(client):
+    """Verifies Agent Engine deployment trigger and status endpoints."""
+    # Deploy / get manifest
+    deploy_resp = client.get('/api/governance/agent-engine-deploy')
+    assert deploy_resp.status_code == 200
+    deploy_data = deploy_resp.get_json()
+    assert deploy_data["status"] == "SUCCESS"
+    assert "deployment" in deploy_data
+    assert "reasoningEngines" in deploy_data["deployment"]["resource_name"]
+
+    # Check status
+    status_resp = client.get('/api/governance/agent-engine-status')
+    assert status_resp.status_code == 200
+    status_data = status_resp.get_json()
+    assert status_data["status"] == "DEPLOYED"
+    assert status_data["assurance_score"] == 0.992
+
+

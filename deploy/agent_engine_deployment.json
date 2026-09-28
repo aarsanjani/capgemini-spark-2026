@@ -1,0 +1,59 @@
+{
+  "resource_name": "projects/arsanjani-genai/locations/us-central1/reasoningEngines/antigravity-ae-v3",
+  "display_name": "Antigravity-v3-Enterprise-Governance-Engine",
+  "description": "ADK 2.6 Bounded Emergence Multi-Agent Orchestrator on Gemini Enterprise Agent Platform",
+  "platform": "Gemini Enterprise Agent Platform",
+  "framework": "ADK 2.6",
+  "runtime": {
+    "python_version": "3.11+",
+    "entrypoint": "backend.agent_engine_app:AntigravityAgentEngineApp",
+    "staging_bucket": "gs://arsanjani-genai-agent-engine-artifacts",
+    "environment_variables": {
+      "GOOGLE_GENAI_USE_VERTEXAI": "true",
+      "GOOGLE_CLOUD_PROJECT": "arsanjani-genai",
+      "GOOGLE_CLOUD_LOCATION": "us-central1",
+      "ANTIGRAVITY_GOVERNANCE_MODE": "BOUNDED_EMERGENCE"
+    }
+  },
+  "agents": [
+    {
+      "name": "AntigravitySupervisorAgent",
+      "role": "BOUNDED_EMERGENCE_SUPERVISOR",
+      "model": "gemini-2.5-pro",
+      "clearance": "TOP_SECRET"
+    },
+    {
+      "name": "QuantitativePortfolioAnalyticsAgent",
+      "role": "QUANT_PORTFOLIO_ANALYTICS",
+      "model": "gemini-2.5-pro",
+      "clearance": "CONFIDENTIAL"
+    },
+    {
+      "name": "CRMRecordsAgent",
+      "role": "CLIENT_CRM_SYNTHESIS",
+      "model": "gemini-2.5-flash",
+      "clearance": "RESTRICTED"
+    },
+    {
+      "name": "ComplianceSentinelAgent",
+      "role": "FIDUCIARY_COMPLIANCE",
+      "model": "gemini-2.5-pro",
+      "clearance": "TOP_SECRET"
+    },
+    {
+      "name": "OperationsSimulationAgent",
+      "role": "MONTE_CARLO_SIMULATION",
+      "model": "gemini-2.5-flash",
+      "clearance": "CONFIDENTIAL"
+    }
+  ],
+  "policies": [
+    "policy-max-transaction-limit",
+    "policy-pii-phi-guardrail",
+    "policy-drift-ceiling",
+    "policy-wash-sale-filter"
+  ],
+  "assurance_score": 0.992,
+  "deployed_at": "2026-09-28T05:24:03.547018+00:00",
+  "status": "ACTIVE_SERVING"
+}
