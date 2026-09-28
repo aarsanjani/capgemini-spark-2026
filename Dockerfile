@@ -25,6 +25,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Copy application files
 COPY backend/ /app/backend/
 COPY frontend/ /app/frontend/
+COPY deploy/ /app/deploy/
 COPY GEMINI.md architecture.md orchestration.md /app/
 
 EXPOSE 8080
