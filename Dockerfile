@@ -1,5 +1,5 @@
 # ==============================================================================
-# DOCKERFILE: ANTIGRAVITY AGENT ENGINE (GEMINI ENTERPRISE AGENT PLATFORM)
+# DOCKERFILE: PALADIN AGENT ENGINE (GEMINI ENTERPRISE AGENT PLATFORM)
 # ==============================================================================
 FROM python:3.11-slim
 

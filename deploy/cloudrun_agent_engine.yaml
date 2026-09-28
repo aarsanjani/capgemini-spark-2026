@@ -1,10 +1,10 @@
 apiVersion: serving.knative.dev/v1
 kind: Service
 metadata:
-  name: antigravity-agent-engine
+  name: paladin-governance-engine
   labels:
     cloud.googleapis.com/location: us-central1
-    app.kubernetes.io/name: antigravity-agent-engine
+    app.kubernetes.io/name: paladin-governance-engine
     platform: gemini-enterprise-agent-platform
 spec:
   template:
@@ -18,7 +18,7 @@ spec:
       containerConcurrency: 80
       timeoutSeconds: 300
       containers:
-      - image: gcr.io/arsanjani-genai/antigravity-agent-engine:v3.0
+      - image: gcr.io/arsanjani-genai/paladin-governance-engine:v3.0
         resources:
           limits:
             cpu: 2000m
@@ -30,7 +30,7 @@ spec:
           value: "arsanjani-genai"
         - name: GOOGLE_CLOUD_LOCATION
           value: "us-central1"
-        - name: ANTIGRAVITY_GOVERNANCE_MODE
+        - name: PALADIN_GOVERNANCE_MODE
           value: "BOUNDED_EMERGENCE"
         ports:
         - containerPort: 8080
