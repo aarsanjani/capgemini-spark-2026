@@ -822,6 +822,31 @@ document.addEventListener("DOMContentLoaded", () => {
     setupStepDrilldown();
     setupGovernanceModal();
 
+    // A2UI Viewport Expand / Fullscreen Toggle for CXO Reviews
+    const expandBtn = document.getElementById("btn-toggle-expand");
+    const mainContainer = document.querySelector(".main-container");
+    const expandIcon = document.getElementById("expand-icon");
+    const expandLabel = document.getElementById("expand-label");
+
+    if (expandBtn && mainContainer) {
+        expandBtn.addEventListener("click", () => {
+            const isExpanded = mainContainer.classList.toggle("a2ui-expanded");
+            if (isExpanded) {
+                if (expandIcon) expandIcon.innerText = "🗗";
+                if (expandLabel) expandLabel.innerText = "Normal View";
+                expandBtn.title = "Restore Normal 3-Column Split View";
+                expandBtn.style.background = "linear-gradient(135deg, rgba(16, 185, 129, 0.25), rgba(6, 182, 212, 0.25))";
+                expandBtn.style.borderColor = "var(--accent-emerald)";
+            } else {
+                if (expandIcon) expandIcon.innerText = "⛶";
+                if (expandLabel) expandLabel.innerText = "Expand View";
+                expandBtn.title = "Maximize A2UI Viewport for CXO Executive Review";
+                expandBtn.style.background = "";
+                expandBtn.style.borderColor = "";
+            }
+        });
+    }
+
     const toggleBtn = document.getElementById("toggle-blueprint-btn");
     const usecaseBody = document.getElementById("usecase-body");
     const toggleIcon = document.getElementById("toggle-icon");

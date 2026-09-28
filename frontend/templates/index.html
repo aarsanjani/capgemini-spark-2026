@@ -298,10 +298,17 @@
         </section>
 
         <!-- Right Column: Schema-Driven A2UI Viewport -->
-        <section class="right-panel">
+        <section class="right-panel" id="a2ui-panel-card">
             <div class="panel-header">
-                <h2>🖥️ Dynamic A2UI Viewport</h2>
-                <span class="status-indicator live" id="a2ui-status-text">Business Deliverables</span>
+                <div class="panel-header-title">
+                    <h2>🖥️ Dynamic A2UI Viewport</h2>
+                    <span class="status-indicator live" id="a2ui-status-text">Business Deliverables</span>
+                </div>
+                <div class="panel-header-controls">
+                    <button class="btn-expand-a2ui" id="btn-toggle-expand" title="Maximize A2UI Viewport for CXO Executive Review">
+                        <span id="expand-icon">⛶</span> <span id="expand-label">Expand View</span>
+                    </button>
+                </div>
             </div>
 
             <div id="a2ui-viewport" class="a2ui-container">
